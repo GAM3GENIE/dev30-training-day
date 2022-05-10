@@ -13,7 +13,7 @@ const getRandEvent = () => {
 
 // The scope of `days` is too tight 
 const getTrainingDays = event => {
-var days;
+let days;
 
   if (event === 'Marathon') {
     days = 50;
@@ -27,29 +27,25 @@ var days;
 };
 
 // The scope of `name` is too tight 
-const logEvent = event => {
-
-  console.log(`${name}'s event is: ${event}`);
+const logEvent = (name, event) => {
+    console.log(`${name}'s event is: ${event}`);
 };
 
-const logTime = days => {
-
-  console.log(`${name}'s time to train is: ${days} days`);
+const logTime = (name, days) => {
+    console.log(`${name}'s time to train is: ${days} days`);
 };
 
 const event = getRandEvent();
 const days = getTrainingDays(event);
-
+const name = 'Nala';
 // Define a `name` variable. Use it as an argument after updating logEvent and logTime
 
-const name = 'Nala';
-
-logEvent(event);
-logTime(days);
+logEvent(name, event);
+logTime(name, days);
 
 const event2 = getRandEvent();
 const days2 = getTrainingDays(event2);
 const name2 = 'Warren';
  
-logEvent(event2);
-logTime(days2);
+logEvent(name2, event2);
+logTime(name2, days2);
